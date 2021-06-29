@@ -1,0 +1,99 @@
+{
+  "version": 2,
+  "projects": {
+    "mfe": {
+      "root": "apps/mfe",
+      "sourceRoot": "apps/mfe",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/next:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "root": "apps/mfe",
+            "outputPath": "dist/apps/mfe"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "mfe:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "mfe:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "executor": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "mfe:build:production"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/mfe"],
+          "options": {
+            "jestConfig": "apps/mfe/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/mfe/**/*.{ts,tsx,js,jsx}"]
+          }
+        }
+      }
+    },
+    "mfe-e2e": {
+      "root": "apps/mfe-e2e",
+      "sourceRoot": "apps/mfe-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/mfe-e2e/cypress.json",
+            "tsConfig": "apps/mfe-e2e/tsconfig.e2e.json",
+            "devServerTarget": "mfe:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mfe:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/mfe-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/next"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "mfe"
+}
