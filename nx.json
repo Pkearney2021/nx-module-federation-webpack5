@@ -27,12 +27,11 @@
     ]
   },
   "projects": {
-    "mfe": {
+    "container": {
       "tags": []
     },
-    "mfe-e2e": {
-      "tags": [],
-      "implicitDependencies": ["mfe"]
+    "home": {
+      "tags": []
     }
   }
 }
