@@ -1,1 +1,1 @@
-import('./entry2');
+import('./home-entry');

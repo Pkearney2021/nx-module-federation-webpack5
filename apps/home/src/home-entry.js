@@ -1,6 +1,5 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import  Home  from './App/Home';
+import Home from './App/Home';
 
 export default Home;
 

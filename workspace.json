@@ -21,7 +21,7 @@
             ],
             "styles": ["apps/container/src/styles.css"],
             "scripts": [],
-            "webpackConfig": "apps/container/config/webpack/webpack.common.js"
+            "webpackConfig": "apps/container/config/webpack/webpack.js"
           },
           "configurations": {
             "production": {
@@ -95,7 +95,7 @@
             "assets": ["apps/home/src/favicon.ico", "apps/home/src/assets"],
             "styles": ["apps/home/src/styles.css"],
             "scripts": [],
-            "webpackConfig": "apps/home/config/webpack/webpack.common.js"
+            "webpackConfig": "apps/home/config/webpack/webpack.js"
           },
           "configurations": {
             "production": {
