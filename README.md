@@ -15,3 +15,10 @@ To run both apps in parallel
 
 The home app exposes a component `Home` which renders a `<h2>Home Remote</h2>`
 The `container` app consumes the exposed `Home` component and renders it. TAAA DAHH! Module federation working inside of an NX monorepo.
+
+#### Changes I made to get module federation working
+
+- Set the `runtimeChunk` webpack optimization to false for the remote app. [See example](https://github.com/Pkearney2021/nx-module-federation-webpack5/blob/main/workspace.json#L90)
+- Set the `context` to the current working directory. [See example](https://github.com/Pkearney2021/nx-module-federation-webpack5/blob/main/apps/home/config/webpack/webpack.js#L5)
+
+Shout out @robdonn & @coogie - The Travel Buddies 🌮
