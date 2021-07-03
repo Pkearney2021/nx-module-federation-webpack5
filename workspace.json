@@ -87,6 +87,7 @@
           "executor": "@nrwl/web:build",
           "outputs": ["{options.outputPath}"],
           "options": {
+            "runtimeChunk": false,
             "outputPath": "dist/apps/home",
             "index": "apps/home/src/index.html",
             "main": "apps/home/src/main.tsx",

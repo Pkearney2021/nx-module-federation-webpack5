@@ -2,8 +2,7 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const { dependencies } = require('../../../../package.json');
 
 module.exports = (config, context) => {
-  config.context = context.buildOptions.root;
-  config.optimization.runtimeChunk = false;
+  config.context = process.cwd();
   config.plugins.push(
     new ModuleFederationPlugin({
       name: 'home',
