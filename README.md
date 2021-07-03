@@ -12,6 +12,7 @@ To run both apps in parallel
 
 - This repo is using a local registry version of nx to enable webpack 5
 - See [Add support for webpack 5 in Nx 12.x](https://github.com/nrwl/nx/pull/5892)
+- [How to add webpack 5 support to React apps](https://github.com/Pkearney2021/nx-module-federation-webpack5/blob/main/how-to.md)
 
 The home app exposes a component `Home` which renders a `<h2>Home Remote</h2>`
 The `container` app consumes the exposed `Home` component and renders it. TAAA DAHH! Module federation working inside of an NX monorepo.
@@ -21,4 +22,4 @@ The `container` app consumes the exposed `Home` component and renders it. TAAA D
 - Set the `runtimeChunk` webpack optimization to false for the remote app. [See example](https://github.com/Pkearney2021/nx-module-federation-webpack5/blob/main/workspace.json#L90)
 - Set the `context` to the current working directory. [See example](https://github.com/Pkearney2021/nx-module-federation-webpack5/blob/main/apps/home/config/webpack/webpack.js#L5)
 
-Shout out @robdonn & @coogie - The Travel Buddies 🌮
+# Shout out [robdonn](https://github.com/robdonn/robdonn) & [coogie](https://github.com/coogie/coogie.github.io) - The Travel Buddies 🌮
